@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  app:
+    init: true
+    build:
+      context: .
+    command: sleep infinity
+    volumes:
+      - ..:/original:cached
+      - app:/app
+      - ../.devcontainer:/app/.devcontainer:cached
+      - home:/home/app
+volumes:
+  app:
+  home:
